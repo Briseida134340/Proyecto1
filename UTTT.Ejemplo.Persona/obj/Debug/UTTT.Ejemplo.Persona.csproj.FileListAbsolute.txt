@@ -59,6 +59,7 @@ C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Persona.dll.config
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Persona.dll
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Persona.pdb
+C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\AjaxControlToolkit.dll
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Linq.Data.dll
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Persona.Control.dll
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Persona.Data.dll

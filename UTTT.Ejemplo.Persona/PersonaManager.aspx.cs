@@ -14,6 +14,7 @@ using UTTT.Ejemplo.Persona.Control;
 using UTTT.Ejemplo.Persona.Control.Ctrl;
 using System.Net.Mail;
 using System.Net;
+using AjaxControlToolkit;
 
 #endregion
 
@@ -59,6 +60,7 @@ namespace UTTT.Ejemplo.Persona
                         this.session.Parametros.Add("baseEntity", this.baseEntity);
                     }
                     List<CatSexo> lista = dcGlobal.GetTable<CatSexo>().ToList();
+
                     CatSexo catTemp = new CatSexo();
                     catTemp.id = -1;
                     catTemp.strValor = "Seleccionar";
@@ -69,10 +71,22 @@ namespace UTTT.Ejemplo.Persona
                     this.ddlSexo.DataBind();
 
                     this.ddlSexo.SelectedIndexChanged += new EventHandler(ddlSexo_SelectedIndexChanged);
-                    this.ddlSexo.AutoPostBack = true;
+                    this.ddlSexo.AutoPostBack = false;
                     if (this.idPersona == 0)
                     {
                         this.lblAccion.Text = "Agregar";
+
+                        CalendarExtender1.SelectedDate = DateTime.Now;
+
+                        CatSexo catTem = new CatSexo();
+                        catTemp.id = -1;
+                        catTemp.strValor = "Seleccionar";
+                        lista.Insert(0, catTemp);
+                        this.ddlSexo.DataSource = lista;
+                        this.ddlSexo.DataBind();
+                    
+
+
                     }
                     else
                     {
@@ -83,8 +97,16 @@ namespace UTTT.Ejemplo.Persona
                         this.txtAMaterno.Text = this.baseEntity.strAMaterno;
                         this.txtClaveUnica.Text = this.baseEntity.strClaveUnica;
                         this.setItem(ref this.ddlSexo, baseEntity.CatSexo.strValor);
+
+
+
                        
-                    }                
+
+
+
+                    }
+                    this.ddlSexo.SelectedIndexChanged += new EventHandler(ddlSexo_SelectedIndexChanged);
+                    this.ddlSexo.AutoPostBack = false;
                 }
 
             }
@@ -100,6 +122,25 @@ namespace UTTT.Ejemplo.Persona
         {
             try
             {
+                int i = 0;
+                if (int.TryParse(ddlSexo.Text, out i) == false)
+                {
+                    this.lblmensaje.Text = "Selecciona una opcion";
+                    this.lblmensaje.Visible = true;
+                    List<CatSexo> lista = dcGlobal.GetTable<CatSexo>().ToList();
+                    CatSexo catTemp = new CatSexo();
+                    catTemp.id = -1;
+                    catTemp.strValor = "Seleccionar";
+                    lista.Insert(0, catTemp);
+                    this.ddlSexo.DataTextField = "strValor";
+                    this.ddlSexo.DataValueField = "id";
+                    this.ddlSexo.DataSource = lista;
+                    this.ddlSexo.DataBind();
+
+                    this.ddlSexo.SelectedIndexChanged += new EventHandler(ddlSexo_SelectedIndexChanged);
+                    this.ddlSexo.AutoPostBack = false;
+                    return;
+                }
                 if (txtAMaterno.Text == "" && ddlSexo.Text == "-1" && txtClaveUnica.Text == "" && txtAPaterno.Text == "" && txtNombre.Text == "" && txtCURP.Text == "")
                 {
                     this.Response.Redirect("~/PersonaPrincipal.aspx", false);
@@ -110,6 +151,10 @@ namespace UTTT.Ejemplo.Persona
                 {
                     return;
                 }
+                //se obtiene la fecha de nacimiento
+
+                string date = Request.Form[this.txtFechaNacimiento.UniqueID];
+                DateTime fechaNacimiento = Convert.ToDateTime(date);
 
                 DataContext dcGuardar = new DcGeneralDataContext();
                 UTTT.Ejemplo.Linq.Data.Entity.Persona persona = new Linq.Data.Entity.Persona();
@@ -121,6 +166,10 @@ namespace UTTT.Ejemplo.Persona
                     persona.strAMaterno = this.txtAMaterno.Text.Trim();
                     persona.strAPaterno = this.txtAPaterno.Text.Trim();
                     persona.idCatSexo = int.Parse(this.ddlSexo.Text);
+                    
+                    //asignamos la fecha de Nacimineto.
+                    persona.dteFechaNacimiento = fechaNacimiento;
+
                     String mensaje = String.Empty;
                     if (!this.validacion(persona, ref mensaje))
                     {
@@ -146,6 +195,8 @@ namespace UTTT.Ejemplo.Persona
                     persona.strAMaterno = this.txtAMaterno.Text.Trim();
                     persona.strAPaterno = this.txtAPaterno.Text.Trim();
                     persona.idCatSexo = int.Parse(this.ddlSexo.Text);
+                    //asignamos fecha de nacimiento
+                    persona.dteFechaNacimiento = fechaNacimiento;
                     dcGuardar.SubmitChanges();
                     this.showMessage("El registro se edito correctamente.");
                     this.Response.Redirect("~/PersonaPrincipal.aspx", false);
@@ -266,7 +317,7 @@ namespace UTTT.Ejemplo.Persona
                 return false;
             }
 
-            if (_persona.strAMaterno.Length > 50)
+            if (_persona.strAMaterno.Length > 50) 
             {
                 _mensaje = "El apellido materno sale del rango establecido de caracteres";
                 return false;
@@ -281,6 +332,24 @@ namespace UTTT.Ejemplo.Persona
             if (_persona.strCURP.Length > 18)
             {
                 _mensaje = "El CURP sale del rango establecido de caracteres";
+                return false;
+            }
+
+            if (_persona.strNombre.Length < 3)
+            {
+                _mensaje = "El nombre debe de tener mas de 4 letras";
+                return false;
+            }
+
+            if (_persona.strAPaterno.Length < 4)
+            {
+                _mensaje = "El Apellido Paterno debe de tener mas de 4 letras";
+                return false;
+            }
+
+            if (_persona.strAMaterno.Length < 4)
+            {
+                _mensaje = "El Apellido Materno debe de tener mas de 4 letras";
                 return false;
             }
 
