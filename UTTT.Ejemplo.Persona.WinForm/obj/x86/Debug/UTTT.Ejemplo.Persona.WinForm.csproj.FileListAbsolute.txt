@@ -12,7 +12,6 @@ C:\Users\User\Desktop\UTTT\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Per
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\bin\Debug\UTTT.Ejemplo.Persona.WinForm.exe.config
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\bin\Debug\UTTT.Ejemplo.Persona.WinForm.exe
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\bin\Debug\UTTT.Ejemplo.Persona.WinForm.pdb
-C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\obj\x86\Debug\UTTT.Ejemplo.Persona.WinForm.csprojAssemblyReference.cache
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\obj\x86\Debug\UTTT.Ejemplo.Persona.WinForm.frmPersonaManager.resources
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\obj\x86\Debug\UTTT.Ejemplo.Persona.WinForm.frmPrincipal.resources
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\obj\x86\Debug\UTTT.Ejemplo.Persona.WinForm.Properties.Resources.resources
@@ -20,3 +19,4 @@ C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\obj\x86\Debug\UTTT.Ejemplo.Persona.WinForm.csproj.CoreCompileInputs.cache
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\obj\x86\Debug\UTTT.Ejemplo.Persona.WinForm.exe
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\obj\x86\Debug\UTTT.Ejemplo.Persona.WinForm.pdb
+C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WinForm\obj\x86\Debug\UTTT.Ejemplo.Persona.WinForm.csprojAssemblyReference.cache

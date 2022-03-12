@@ -22,7 +22,7 @@ namespace UTTT.Ejemplo.Linq.Data.Entity
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="PersonaLinea")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataSource")]
 	public partial class DcGeneralDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -42,7 +42,7 @@ namespace UTTT.Ejemplo.Linq.Data.Entity
     #endregion
 		
 		public DcGeneralDataContext() : 
-				base(global::UTTT.Ejemplo.Linq.Data.Properties.Settings.Default.PersonaLineaConnectionString, mappingSource)
+				base(global::UTTT.Ejemplo.Linq.Data.Properties.Settings.Default.DataSourceConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
