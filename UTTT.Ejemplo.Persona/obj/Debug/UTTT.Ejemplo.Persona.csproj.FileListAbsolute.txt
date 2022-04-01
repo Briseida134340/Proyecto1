@@ -54,8 +54,6 @@ C:\Users\User\Desktop\UTTT\Octavo 2022\Desarrollo Web\Desarrollo Web\Manuales\Ma
 C:\Users\User\Desktop\UTTT\Octavo 2022\Desarrollo Web\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Debug\UTTT.Ejemplo.Persona.csproj.CopyComplete
 C:\Users\User\Desktop\UTTT\Octavo 2022\Desarrollo Web\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Debug\UTTT.Ejemplo.Persona.dll
 C:\Users\User\Desktop\UTTT\Octavo 2022\Desarrollo Web\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Debug\UTTT.Ejemplo.Persona.pdb
-C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Debug\UTTT.Ejemplo.Persona.csprojAssemblyReference.cache
-C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Debug\UTTT.Ejemplo.Persona.csproj.CoreCompileInputs.cache
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Persona.dll.config
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Persona.dll
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Persona.pdb
@@ -67,6 +65,8 @@ C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Linq.Data.dll.config
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Persona.Control.pdb
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\UTTT.Ejemplo.Persona.Data.pdb
+C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Debug\UTTT.Ejemplo.Persona.csprojAssemblyReference.cache
+C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Debug\UTTT.Ejemplo.Persona.csproj.CoreCompileInputs.cache
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Debug\UTTT.Ejemplo.Persona.csproj.CopyComplete
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Debug\UTTT.Ejemplo.Persona.dll
 C:\Users\briss\Pictures\Desarrollo Web Profesional\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Debug\UTTT.Ejemplo.Persona.pdb

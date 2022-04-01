@@ -39,6 +39,15 @@ namespace UTTT.Ejemplo.Linq.Data.Entity
     partial void InsertCatSexo(CatSexo instance);
     partial void UpdateCatSexo(CatSexo instance);
     partial void DeleteCatSexo(CatSexo instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
+    partial void InsertCatPerfil(CatPerfil instance);
+    partial void UpdateCatPerfil(CatPerfil instance);
+    partial void DeleteCatPerfil(CatPerfil instance);
+    partial void InsertLibros(Libros instance);
+    partial void UpdateLibros(Libros instance);
+    partial void DeleteLibros(Libros instance);
     #endregion
 		
 		public DcGeneralDataContext() : 
@@ -92,6 +101,30 @@ namespace UTTT.Ejemplo.Linq.Data.Entity
 			get
 			{
 				return this.GetTable<CatSexo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<User> User
+		{
+			get
+			{
+				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CatPerfil> CatPerfil
+		{
+			get
+			{
+				return this.GetTable<CatPerfil>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Libros> Libros
+		{
+			get
+			{
+				return this.GetTable<Libros>();
 			}
 		}
 	}
@@ -777,6 +810,666 @@ namespace UTTT.Ejemplo.Linq.Data.Entity
 		{
 			this.SendPropertyChanging();
 			entity.CatSexo = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _Nombre;
+		
+		private string _ApellidoM;
+		
+		private string _ApellidoP;
+		
+		private string _strUsuario;
+		
+		private string _strPassword;
+		
+		private string _StatusUsuario;
+		
+		private System.Nullable<int> _strPerfil;
+		
+		private EntitySet<Libros> _Libros;
+		
+		private EntityRef<CatPerfil> _CatPerfil;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnNombreChanging(string value);
+    partial void OnNombreChanged();
+    partial void OnApellidoMChanging(string value);
+    partial void OnApellidoMChanged();
+    partial void OnApellidoPChanging(string value);
+    partial void OnApellidoPChanged();
+    partial void OnstrUsuarioChanging(string value);
+    partial void OnstrUsuarioChanged();
+    partial void OnstrPasswordChanging(string value);
+    partial void OnstrPasswordChanged();
+    partial void OnStatusUsuarioChanging(string value);
+    partial void OnStatusUsuarioChanged();
+    partial void OnstrPerfilChanging(System.Nullable<int> value);
+    partial void OnstrPerfilChanged();
+    #endregion
+		
+		public User()
+		{
+			this._Libros = new EntitySet<Libros>(new Action<Libros>(this.attach_Libros), new Action<Libros>(this.detach_Libros));
+			this._CatPerfil = default(EntityRef<CatPerfil>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this.OnNombreChanging(value);
+					this.SendPropertyChanging();
+					this._Nombre = value;
+					this.SendPropertyChanged("Nombre");
+					this.OnNombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApellidoM", DbType="VarChar(50)")]
+		public string ApellidoM
+		{
+			get
+			{
+				return this._ApellidoM;
+			}
+			set
+			{
+				if ((this._ApellidoM != value))
+				{
+					this.OnApellidoMChanging(value);
+					this.SendPropertyChanging();
+					this._ApellidoM = value;
+					this.SendPropertyChanged("ApellidoM");
+					this.OnApellidoMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApellidoP", DbType="VarChar(50)")]
+		public string ApellidoP
+		{
+			get
+			{
+				return this._ApellidoP;
+			}
+			set
+			{
+				if ((this._ApellidoP != value))
+				{
+					this.OnApellidoPChanging(value);
+					this.SendPropertyChanging();
+					this._ApellidoP = value;
+					this.SendPropertyChanged("ApellidoP");
+					this.OnApellidoPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_strUsuario", DbType="VarChar(50)")]
+		public string strUsuario
+		{
+			get
+			{
+				return this._strUsuario;
+			}
+			set
+			{
+				if ((this._strUsuario != value))
+				{
+					this.OnstrUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._strUsuario = value;
+					this.SendPropertyChanged("strUsuario");
+					this.OnstrUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_strPassword", DbType="VarChar(50)")]
+		public string strPassword
+		{
+			get
+			{
+				return this._strPassword;
+			}
+			set
+			{
+				if ((this._strPassword != value))
+				{
+					this.OnstrPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._strPassword = value;
+					this.SendPropertyChanged("strPassword");
+					this.OnstrPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusUsuario", DbType="VarChar(50)")]
+		public string StatusUsuario
+		{
+			get
+			{
+				return this._StatusUsuario;
+			}
+			set
+			{
+				if ((this._StatusUsuario != value))
+				{
+					this.OnStatusUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._StatusUsuario = value;
+					this.SendPropertyChanged("StatusUsuario");
+					this.OnStatusUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_strPerfil", DbType="Int")]
+		public System.Nullable<int> strPerfil
+		{
+			get
+			{
+				return this._strPerfil;
+			}
+			set
+			{
+				if ((this._strPerfil != value))
+				{
+					if (this._CatPerfil.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnstrPerfilChanging(value);
+					this.SendPropertyChanging();
+					this._strPerfil = value;
+					this.SendPropertyChanged("strPerfil");
+					this.OnstrPerfilChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Libros", Storage="_Libros", ThisKey="id", OtherKey="idUsuario")]
+		public EntitySet<Libros> Libros
+		{
+			get
+			{
+				return this._Libros;
+			}
+			set
+			{
+				this._Libros.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CatPerfil_User", Storage="_CatPerfil", ThisKey="strPerfil", OtherKey="id", IsForeignKey=true)]
+		public CatPerfil CatPerfil
+		{
+			get
+			{
+				return this._CatPerfil.Entity;
+			}
+			set
+			{
+				CatPerfil previousValue = this._CatPerfil.Entity;
+				if (((previousValue != value) 
+							|| (this._CatPerfil.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CatPerfil.Entity = null;
+						previousValue.User.Remove(this);
+					}
+					this._CatPerfil.Entity = value;
+					if ((value != null))
+					{
+						value.User.Add(this);
+						this._strPerfil = value.id;
+					}
+					else
+					{
+						this._strPerfil = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("CatPerfil");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Libros(Libros entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Libros(Libros entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CatPerfil")]
+	public partial class CatPerfil : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _strValor;
+		
+		private string _strDescripcion;
+		
+		private EntitySet<User> _User;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnstrValorChanging(string value);
+    partial void OnstrValorChanged();
+    partial void OnstrDescripcionChanging(string value);
+    partial void OnstrDescripcionChanged();
+    #endregion
+		
+		public CatPerfil()
+		{
+			this._User = new EntitySet<User>(new Action<User>(this.attach_User), new Action<User>(this.detach_User));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_strValor", DbType="VarChar(50)")]
+		public string strValor
+		{
+			get
+			{
+				return this._strValor;
+			}
+			set
+			{
+				if ((this._strValor != value))
+				{
+					this.OnstrValorChanging(value);
+					this.SendPropertyChanging();
+					this._strValor = value;
+					this.SendPropertyChanged("strValor");
+					this.OnstrValorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_strDescripcion", DbType="VarChar(50)")]
+		public string strDescripcion
+		{
+			get
+			{
+				return this._strDescripcion;
+			}
+			set
+			{
+				if ((this._strDescripcion != value))
+				{
+					this.OnstrDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._strDescripcion = value;
+					this.SendPropertyChanged("strDescripcion");
+					this.OnstrDescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CatPerfil_User", Storage="_User", ThisKey="id", OtherKey="strPerfil")]
+		public EntitySet<User> User
+		{
+			get
+			{
+				return this._User;
+			}
+			set
+			{
+				this._User.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_User(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.CatPerfil = this;
+		}
+		
+		private void detach_User(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.CatPerfil = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Libros")]
+	public partial class Libros : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _Titulo;
+		
+		private string _Autor;
+		
+		private string _Editorial;
+		
+		private string _Descripcion;
+		
+		private System.Nullable<int> _idUsuario;
+		
+		private EntityRef<User> _User;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnTituloChanging(string value);
+    partial void OnTituloChanged();
+    partial void OnAutorChanging(string value);
+    partial void OnAutorChanged();
+    partial void OnEditorialChanging(string value);
+    partial void OnEditorialChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    partial void OnidUsuarioChanging(System.Nullable<int> value);
+    partial void OnidUsuarioChanged();
+    #endregion
+		
+		public Libros()
+		{
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titulo", DbType="VarChar(50)")]
+		public string Titulo
+		{
+			get
+			{
+				return this._Titulo;
+			}
+			set
+			{
+				if ((this._Titulo != value))
+				{
+					this.OnTituloChanging(value);
+					this.SendPropertyChanging();
+					this._Titulo = value;
+					this.SendPropertyChanged("Titulo");
+					this.OnTituloChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Autor", DbType="VarChar(50)")]
+		public string Autor
+		{
+			get
+			{
+				return this._Autor;
+			}
+			set
+			{
+				if ((this._Autor != value))
+				{
+					this.OnAutorChanging(value);
+					this.SendPropertyChanging();
+					this._Autor = value;
+					this.SendPropertyChanged("Autor");
+					this.OnAutorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Editorial", DbType="VarChar(50)")]
+		public string Editorial
+		{
+			get
+			{
+				return this._Editorial;
+			}
+			set
+			{
+				if ((this._Editorial != value))
+				{
+					this.OnEditorialChanging(value);
+					this.SendPropertyChanging();
+					this._Editorial = value;
+					this.SendPropertyChanged("Editorial");
+					this.OnEditorialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(50)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUsuario", DbType="Int")]
+		public System.Nullable<int> idUsuario
+		{
+			get
+			{
+				return this._idUsuario;
+			}
+			set
+			{
+				if ((this._idUsuario != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._idUsuario = value;
+					this.SendPropertyChanged("idUsuario");
+					this.OnidUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Libros", Storage="_User", ThisKey="idUsuario", OtherKey="id", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Libros.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Libros.Add(this);
+						this._idUsuario = value.id;
+					}
+					else
+					{
+						this._idUsuario = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

@@ -55,7 +55,7 @@ namespace UTTT.Ejemplo.Persona
             MailMessage mailMessage = new MailMessage();
             SmtpClient smtpClient = new SmtpClient();
             mailMessage.From = new MailAddress("19300972@uttt.edu.mx");
-            mailMessage.To.Add(new MailAddress("edel.meza@uttt.edu.mx"));
+            mailMessage.To.Add(new MailAddress("19300972@uttt")); // edel.meza@uttt.edu.mx
             mailMessage.Subject = "Tarea Evaluacion";
             mailMessage.IsBodyHtml = true;
             mailMessage.Body = Excepcion;

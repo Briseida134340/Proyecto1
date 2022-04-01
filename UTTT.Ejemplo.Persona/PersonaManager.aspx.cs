@@ -59,51 +59,38 @@ namespace UTTT.Ejemplo.Persona
                     {
                         this.session.Parametros.Add("baseEntity", this.baseEntity);
                     }
-                    List<CatSexo> lista = dcGlobal.GetTable<CatSexo>().ToList();
 
-                    CatSexo catTemp = new CatSexo();
-                    catTemp.id = -1;
-                    catTemp.strValor = "Seleccionar";
-                    lista.Insert(0, catTemp);
+                    List<CatSexo> lista = dcGlobal.GetTable<CatSexo>().ToList();
                     this.ddlSexo.DataTextField = "strValor";
                     this.ddlSexo.DataValueField = "id";
-                    this.ddlSexo.DataSource = lista;
-                    this.ddlSexo.DataBind();
 
-                    this.ddlSexo.SelectedIndexChanged += new EventHandler(ddlSexo_SelectedIndexChanged);
-                    this.ddlSexo.AutoPostBack = false;
                     if (this.idPersona == 0)
                     {
                         this.lblAccion.Text = "Agregar";
-
                         CalendarExtender1.SelectedDate = DateTime.Now;
 
-                        CatSexo catTem = new CatSexo();
+                        CatSexo catTemp = new CatSexo();
                         catTemp.id = -1;
                         catTemp.strValor = "Seleccionar";
                         lista.Insert(0, catTemp);
                         this.ddlSexo.DataSource = lista;
                         this.ddlSexo.DataBind();
-                    
-
 
                     }
                     else
                     {
                         this.lblAccion.Text = "Editar";
                         this.txtNombre.Text = this.baseEntity.strNombre;
-                        this.txtCURP.Text = this.baseEntity.strCURP;
                         this.txtAPaterno.Text = this.baseEntity.strAPaterno;
                         this.txtAMaterno.Text = this.baseEntity.strAMaterno;
                         this.txtClaveUnica.Text = this.baseEntity.strClaveUnica;
+                        this.txtCURP.Text = this.baseEntity.strCURP;
+
+                        CalendarExtender1.SelectedDate = this.baseEntity.dteFechaNacimiento.Value.Date;
+
+                        this.ddlSexo.DataSource = lista;
+                        this.ddlSexo.DataBind();
                         this.setItem(ref this.ddlSexo, baseEntity.CatSexo.strValor);
-
-
-
-                       
-
-
-
                     }
                     this.ddlSexo.SelectedIndexChanged += new EventHandler(ddlSexo_SelectedIndexChanged);
                     this.ddlSexo.AutoPostBack = false;
@@ -195,8 +182,10 @@ namespace UTTT.Ejemplo.Persona
                     persona.strAMaterno = this.txtAMaterno.Text.Trim();
                     persona.strAPaterno = this.txtAPaterno.Text.Trim();
                     persona.idCatSexo = int.Parse(this.ddlSexo.Text);
+
                     //asignamos fecha de nacimiento
                     persona.dteFechaNacimiento = fechaNacimiento;
+
                     dcGuardar.SubmitChanges();
                     this.showMessage("El registro se edito correctamente.");
                     this.Response.Redirect("~/PersonaPrincipal.aspx", false);
@@ -205,8 +194,10 @@ namespace UTTT.Ejemplo.Persona
             }
             catch (Exception _e)
             {
-                this.showMessageException(_e.Message);
-                enviaremail(_e.Message);
+                //this.showMessageException(_e.Message);
+                // enviaremail(_e.Message);
+                this.lblmensaje.Text = "Proporciona una fecha correcta";
+                this.lblmensaje.Visible = true;
             }
         }
 

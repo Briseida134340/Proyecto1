@@ -34,4 +34,37 @@
       <Association Name="CatSexo_Persona" Member="Persona" ThisKey="id" OtherKey="idCatSexo" Type="Persona" />
     </Type>
   </Table>
+  <Table Name="dbo.[User]" Member="User">
+    <Type Name="User">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApellidoM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApellidoP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StatusUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strPerfil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_Libros" Member="Libros" ThisKey="id" OtherKey="idUsuario" Type="Libros" />
+      <Association Name="CatPerfil_User" Member="CatPerfil" ThisKey="strPerfil" OtherKey="id" Type="CatPerfil" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CatPerfil" Member="CatPerfil">
+    <Type Name="CatPerfil">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="strValor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strDescripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CatPerfil_User" Member="User" ThisKey="id" OtherKey="strPerfil" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Libros" Member="Libros">
+    <Type Name="Libros">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Titulo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Autor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Editorial" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_Libros" Member="User" ThisKey="idUsuario" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
 </Database>
